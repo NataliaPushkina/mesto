@@ -1,6 +1,6 @@
 # Проект: Место
 
-### Обзор
+### В проекте применены следующие технологии:
 
 * верстка
 * работа с формами
@@ -14,4 +14,4 @@
 
 **GitHub Pages**
 
-[Ссылка на проект](https://nataliapushkina.github.io/mesto/)
+* [Ссылка на проект](https://nataliapushkina.github.io/mesto/)
