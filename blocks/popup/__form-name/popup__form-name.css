@@ -1,0 +1,12 @@
+.popup__form-name {
+  margin-top: 54px;
+  width: 100%;
+  max-width: 358px;
+  border: none;
+  border-bottom: 1px solid #000000;
+  opacity: 0.2;
+}
+
+.popup__form-name:focus {
+  outline: none;
+}
