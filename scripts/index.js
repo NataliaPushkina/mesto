@@ -1,15 +1,3 @@
-// let openPopUp = document.querySelector('.edit-button');
-// let closePopUp = document.querySelector('.popup-close');
-// let popUp = document.querySelector('.popup');
-
-// openPopUp.addEventListener('click', () => {
-//   popUp.classList.add('popup_opened');
-// })
-
-// popUp.addEventListener('click', () => {
-//   popUp.classList.remove('popup_opened');
-// })
-
 const editBtn = document.querySelector('.edit-button');
 const popup = document.querySelector('.popup');
 const closePopupBtn = document.querySelector('.popup__close');
@@ -39,4 +27,5 @@ function formSubmitHandler(evt) {
 
   togglePopUp();
 }
+
 formElement.addEventListener('submit', formSubmitHandler);
