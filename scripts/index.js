@@ -34,8 +34,9 @@ jobInput.value = profileAbout.textContent;
 
 function formSubmitHandler(evt) {
   evt.preventDefault();
-  profileName = nameInput.value;
-  profileAbout = jobInput.value;
+  profileName.textContent = nameInput.value;
+  profileAbout.textContent = jobInput.value;
+
+  togglePopUp();
 }
 formElement.addEventListener('submit', formSubmitHandler);
-
