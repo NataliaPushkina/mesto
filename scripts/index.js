@@ -18,7 +18,6 @@ const profileAbout = document.querySelector('.profile__subtitle');
 const nameInput = document.querySelector('.form__item_name');
 const jobInput = document.querySelector('.form__item_job');
 
-
 function formSubmitHandler(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;

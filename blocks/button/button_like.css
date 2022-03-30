@@ -1,5 +1,5 @@
 .button_like {
-  background-image: url(../../../images/like.svg);
+  background-image: url(../../images/like.svg);
   background-repeat: no-repeat;
   background-position: center;
   object-fit: contain;
@@ -16,6 +16,6 @@
 }
 
 .button_like:active {
-  background-image: url(../../../images/like-active.svg);
+  background-image: url(../../images/like-active.svg);
   opacity: 1;
 }
