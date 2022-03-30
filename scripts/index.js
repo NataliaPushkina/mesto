@@ -12,11 +12,11 @@ editBtn.addEventListener('click', togglePopUp);
 
 closePopupBtn.addEventListener('click', togglePopUp);
 
-const formElement = document.querySelector('.popup__form');
+const formElement = document.querySelector('.form');
 const profileName = document.querySelector('.profile__title');
 const profileAbout = document.querySelector('.profile__subtitle');
-const nameInput = document.querySelector('.input__item_name');
-const jobInput = document.querySelector('.input__item_job');
+const nameInput = document.querySelector('.form__item_name');
+const jobInput = document.querySelector('.form__item_job');
 
 
 function formSubmitHandler(evt) {
