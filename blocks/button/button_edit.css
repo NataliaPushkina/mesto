@@ -1,4 +1,4 @@
-.edit-button {
+.button_edit {
   width: 24px;
   height: 24px;
   background-image: url('../../images/edit-button.svg');
@@ -7,9 +7,5 @@
   box-sizing: border-box;
   margin: 10px 0 0 18px;
   background-color: #000;
-  border: 1px solid #FFFFFF;
-}
-
-.edit-button:hover {
-  cursor: pointer;
+  border: 1px solid #fff;
 }
