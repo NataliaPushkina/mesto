@@ -21,11 +21,11 @@
         <img src="./images/image.jpg" alt="Аватар" class="profile__avatar">
         <div class="profile__info">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
-          <button type="button" class="button button_edit"></button>
+          <button type="button" class="button button_type_edit"></button>
           <p class="profile__subtitle">Исследователь океана</p>
         </div>
       </div>
-      <button type="button" class="button button_add"></button>
+      <button type="button" class="button button_type_add"></button>
     </section>
 
     <section class="elements">
@@ -34,7 +34,7 @@
           <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карчаевск" class="element__photo">
           <div class="element__caption">
             <h2 class="element__title">Карачаевск</h2>
-            <button type="button" class="button button_like"></button>
+            <button type="button" class="button button_type_like"></button>
           </div>
         </li>
 
@@ -43,7 +43,7 @@
           <img src="./images/kirill-pershin-1404681-unsplash.jpg" alt="эльбрус" class="element__photo">
           <div class="element__caption">
             <h2 class="element__title">Гора Эльбрус</h2>
-            <button type="button" class="button button_like"></button>
+            <button type="button" class="button button_type_like"></button>
           </div>
         </li>
 
@@ -51,7 +51,7 @@
           <img src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Домбай" class="element__photo">
           <div class="element__caption">
             <h2 class="element__title">Домбай</h2>
-            <button type="button" class="button button_like"></button>
+            <button type="button" class="button button_type_like"></button>
           </div>
         </li>
 
@@ -59,7 +59,7 @@
           <img src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Карчаевск" class="element__photo">
           <div class="element__caption">
             <h2 class="element__title">Гора эльбрус</h2>
-            <button type="button" class="button button_like"></button>
+            <button type="button" class="button button_type_like"></button>
           </div>
         </li>
 
@@ -67,7 +67,7 @@
           <img src="./images/kirill-pershin-1556355-unsplash.jpg" alt="эльбрус" class="element__photo">
           <div class="element__caption">
             <h2 class="element__title">Домбай</h2>
-            <button type="button" class="button button_like"></button>
+            <button type="button" class="button button_type_like"></button>
           </div>
         </li>
 
@@ -75,7 +75,7 @@
           <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Домбай" class="element__photo">
           <div class="element__caption">
             <h2 class="element__title">Караваево-Черкессия</h2>
-            <button type="button" class="button button_like"></button>
+            <button type="button" class="button button_type_like"></button>
           </div>
         </li>
 
@@ -89,18 +89,14 @@
 
   <div class="popup">
     <div class="popup__container">
-      <button type="button" class="button button_close"></button>
+      <button type="button" class="button button_type_close"></button>
       <h3 class="popup__title">Редактировать профиль</h3>
-      <form class="form" name="formElement">
-        <ul class="form__list">
-          <li>
-            <input type="text" name="name" class="form__item form__item_name" placeholder="Имя">
-          </li>
-          <li>
-            <input type="text" name="job" class="form__item form__item_job" placeholder="О себе">
-          </li>
-        </ul>
-        <button type="submit" class="button button_save">Сохранить</button>
+      <form class="popup__form" name="formElement">
+        <fieldset class="popup__inputs">
+            <input type="text" name="name" class="popup__input popup__input_el_name" placeholder="Имя">
+            <input type="text" name="job" class="popup__input popup__input_el_job" placeholder="О себе">
+        </fieldset>
+        <button type="submit" class="button button_type_save">Сохранить</button>
       </form>
     </div>
   </div>
