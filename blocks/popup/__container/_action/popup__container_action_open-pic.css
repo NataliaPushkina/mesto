@@ -1,0 +1,13 @@
+.popup__container_action_open-pic {
+  width: 100%;
+  max-width: 816px;
+  min-height: 540px;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 950px) {
+  .popup__container_action_open-pic {
+    margin: auto 40px;
+  }
+}
