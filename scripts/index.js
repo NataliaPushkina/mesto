@@ -70,27 +70,6 @@ closeBtnAdd.addEventListener('click', function () {
   closePopup(popupAdd);
 });
 
-// function openPopupEdit() {
-//   popupEdit.classList.add('popup_opened');
-//   nameInput.value = profileName.textContent;
-//   jobInput.value = profileAbout.textContent;
-// }
-
-// function closePopupEdit() {
-//   popup.classList.remove('popup_opened');
-//   // popup.style.transitionProperty = "opacity";
-//   // popup.style.transitionDuration = "0.8s";
-//   // popup.style.transitionTimingFunction = "ease";
-// }
-
-// function openPopupAdd() {
-//   popupAdd.classList.add('popup_opened');
-// }
-
-// function closePopupAdd() {
-//   popupAdd.classList.remove('popup_opened');
-// }
-
 function formEditSubmitHandler(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
