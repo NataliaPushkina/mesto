@@ -6,18 +6,20 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: 1027px) {
   .profile {
-    padding-left: 27px;
+    padding: 40px 27px 0;
   }
 }
 
 @media screen and (max-width: 767px) {
   .profile {
     justify-content: center;
-    padding-left: 0;
     flex-direction: column;
+    padding: 40px 0 0;
   }
 }
+
