@@ -50,24 +50,26 @@
             required
             type="text"
             name="name"
+            id="popup__input_el_name"
             minlength= "2"
             maxlength= "40"
             class="popup__input popup__input_el_name"
             placeholder="Имя"
             >
-            <span class="popup__input-error">Ошибка</span>
+            <span class="popup__error popup__input_el_name-error"></span>
             <input
             required
             type="text"
             name="job"
+            id="popup__input_el_job"
             minlength= "2"
             maxlength= "200"
             class="popup__input popup__input_el_job"
             placeholder="О себе"
             >
-            <span class="popup__input-error">Ошибка</span>
+            <span class="popup__error popup__input_el_job-error"></span>
         </fieldset>
-        <button type="submit" class="button button_type_save">Сохранить</button>
+        <button type="submit" class="popup__button button_type_save">Сохранить</button>
       </form>
     </div>
   </div>
@@ -82,22 +84,24 @@
             required
             type="text"
             name="title"
+            id="popup__input_el_title"
             minlength= "2"
             maxlength= "30"
             class="popup__input popup__input_el_title"
             placeholder="Название"
             >
-            <span class="popup__input-error">Ошибка</span>
+            <span class="popup__error popup__input_el_title-error"></span>
             <input
             required
             type="url"
             name="link"
+            id="popup__input_el_link"
             class="popup__input popup__input_el_link"
             placeholder="Ссылка на картинку"
             >
-            <span class="popup__input-error">Ошибка</span>
+            <span class="popup__error popup__input_el_link-error"></span>
         </fieldset>
-        <button type="submit" class="button button_type_save">Создать</button>
+        <button type="submit" class="popup__button button_type_save">Создать</button>
       </form>
     </div>
   </div>
