@@ -20,11 +20,12 @@ const placeName = document.querySelector('.popup__input_el_title');
 const placeLink = document.querySelector('.popup__input_el_link');
 
 function openPopup(popup) {
- popup.classList.add('popup_opened');
+  popup.classList.add('popup_opened');
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  cancelValidation(config);
 }
 
 function editProfileHandle(evt) {
@@ -119,6 +120,8 @@ buttonEditClose.addEventListener('click', function () {
 
 buttonAddClose.addEventListener('click', function () {
   closePopup(popupAdd);
+  placeName.value = '';
+  placeLink.value = '';
 });
 
 buttonPictureClose.addEventListener('click', function () {
