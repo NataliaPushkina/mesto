@@ -45,31 +45,31 @@
       <button type="button" class="button button_type_close"></button>
       <h3 class="popup__title">Редактировать профиль</h3>
       <form class="popup__form" name="formElement" novalidate>
-        <fi  eldset class="popup__inputs">
+        <fieldset class="popup__inputs">
             <input
             required
             type="text"
             name="name"
-            id="popup__input_el_name"
+            id="name"
             minlength= "2"
             maxlength= "40"
             class="popup__input popup__input_el_name"
             placeholder="Имя"
             >
-            <span class="popup__error popup__input_el_name-error"></span>
+            <span class="popup__error name-error"></span>
             <input
             required
             type="text"
             name="job"
-            id="popup__input_el_job"
+            id="job"
             minlength= "2"
             maxlength= "200"
             class="popup__input popup__input_el_job"
             placeholder="О себе"
             >
-            <span class="popup__error popup__input_el_job-error"></span>
-        </fi>
-        <button type="submit" class="popup__button button_type_save">Сохранить</button>
+            <span class="popup__error job-error"></span>
+        </fieldset>
+        <button type="submit" class="popup__button">Сохранить</button>
       </form>
     </div>
   </div>
@@ -84,24 +84,24 @@
             required
             type="text"
             name="title"
-            id="popup__input_el_title"
+            id="title"
             minlength= "2"
             maxlength= "30"
             class="popup__input popup__input_el_title"
             placeholder="Название"
             >
-            <span class="popup__error popup__input_el_title-error"></span>
+            <span class="popup__error title-error"></span>
             <input
             required
             type="url"
             name="link"
-            id="popup__input_el_link"
+            id="link"
             class="popup__input popup__input_el_link"
             placeholder="Ссылка на картинку"
             >
-            <span class="popup__error popup__input_el_link-error"></span>
+            <span class="popup__error link-error"></span>
         </fieldset>
-        <button type="submit" class="popup__button button_type_save">Создать</button>
+        <button type="submit" class="popup__button">Создать</button>
       </form>
     </div>
   </div>
@@ -133,3 +133,23 @@
 <script src='./scripts/index.js'></script>
 </body>
 </html>
+
+
+
+
+<!-- <form class="popup__form" name="formElement" novalidate>
+  <fieldset class="popup__inputs">
+      <input
+      ...
+      id="popup__input_el_name"
+      class="popup__input popup__input_el_name"
+      >
+      <span class="popup__error popup__input_el_name-error"></span>
+      <input
+      id="popup__input_el_job"
+      class="popup__input popup__input_el_job"
+      >
+      <span class="popup__error popup__input_el_job-error"></span>
+  </fieldset>
+  <button type="submit" class="popup__button button_type_save">Сохранить</button>
+</form> -->

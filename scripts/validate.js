@@ -4,7 +4,7 @@ const config = {
   submitButtonSelector: '.popup__button',
   inactiveButtonClass: 'popup__button_disabled',
   inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__error_visible'
+  errorClass: 'popup__error'
 };
 
 const showInputError = (config, formElement, inputElement) => {
@@ -54,12 +54,7 @@ const enableValidation = (config) => {
 };
 
 const hasInvalidInput = (inputList) => {
-  // проходим по этому массиву методом some
   return inputList.some((inputElement) => {
-    // Если поле не валидно, колбэк вернёт true
-    // Обход массива прекратится и вся функция
-    // hasInvalidInput вернёт true
-
     return !inputElement.validity.valid;
   })
 };
