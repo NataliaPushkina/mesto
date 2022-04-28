@@ -20,11 +20,12 @@ const placeName = document.querySelector('.popup__input_el_title');
 const placeLink = document.querySelector('.popup__input_el_link');
 
 function openPopup(popup) {
- popup.classList.add('popup_opened');
+  popup.classList.add('popup_opened');
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  cancelValidation(config);
 }
 
 function editProfileHandle(evt) {
@@ -64,11 +65,11 @@ function getElement(item) {
     image.src = photo.src;
     image.alt = title.textContent;
     imageCaption.textContent = title.textContent;
+
     openPopup(popupPicture);
   });
 
   pushCard(getElementTemplate);
-
   return getElementTemplate;
 }
 
@@ -85,6 +86,20 @@ function addCardHandle(evt) {
 function deleteCardHandle(evt) {
   const item = evt.target.closest('.element');
   item.remove();
+}
+
+function handleEsc(evt) {
+  const popupOpened = document.querySelector('.popup_opened');
+  if (evt.key === 'Escape') {
+    closePopup(popupOpened);
+  }
+}
+
+function handleOverlay(evt) {
+  const popupOpened = document.querySelector('.popup_opened');
+  if (evt.target === popupOpened) {
+  closePopup(popupOpened);
+  }
 }
 
 render();
@@ -105,6 +120,8 @@ buttonEditClose.addEventListener('click', function () {
 
 buttonAddClose.addEventListener('click', function () {
   closePopup(popupAdd);
+  placeName.value = '';
+  placeLink.value = '';
 });
 
 buttonPictureClose.addEventListener('click', function () {
@@ -112,5 +129,7 @@ buttonPictureClose.addEventListener('click', function () {
 });
 
 formEditElement.addEventListener('submit', editProfileHandle);
-
 formAddElement.addEventListener('submit', addCardHandle);
+
+document.addEventListener('keydown', handleEsc);
+document.addEventListener('click', handleOverlay);
