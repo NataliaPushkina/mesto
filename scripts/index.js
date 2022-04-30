@@ -1,3 +1,4 @@
+const popups = document.querySelectorAll('.popup');
 const buttonEdit = document.querySelector('.button_type_edit');
 const popupEdit = document.querySelector('.popup_action_edit');
 const popupAdd = document.querySelector('.popup_action_add');
@@ -21,14 +22,36 @@ const placeLink = document.querySelector('.popup__input_el_link');
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', handleEsc);
+  // document.addEventListener('click', handleOverlay);
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
-  cancelValidation(config);
+  document.removeEventListener('keydown', handleEsc);
+  // document.removeEventListener('click', handleOverlay);
 }
 
-function editProfileHandle(evt) {
+
+popups.forEach((popup) => {
+  popup.addEventListener('mousedown', (evt) => {
+    if (evt.target.classList.contains('popup_opened')) {
+      closePopup(popup);
+    }
+    if (evt.target.classList.contains('button_type_close')) {
+      closePopup(popup);
+    }
+  });
+});
+
+// function handleOverlay(evt) {
+//   const popupOpened = document.querySelector('.popup_opened');
+//   if (evt.target === popupOpened) {
+//   closePopup(popupOpened);
+//   }
+// }
+
+function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileAbout.textContent = jobInput.value;
@@ -55,7 +78,7 @@ function getElement(item) {
   photo.src = item.link;
   photo.alt = item.name;
 
-  buttonDeleteCard.addEventListener('click', deleteCardHandle);
+  buttonDeleteCard.addEventListener('click', handleCardDelete);
 
   buttonLikeCard.addEventListener('click', function () {
     buttonLikeCard.classList.toggle('button_status_active')
@@ -73,32 +96,27 @@ function getElement(item) {
   return getElementTemplate;
 }
 
-function addCardHandle(evt) {
+// console.log(getElementTemplate);
+
+function handleCardAdd(evt) {
   evt.preventDefault();
   const newCard = getElement(
     { name: placeName.value, link: placeLink.value });
   pushCard(newCard);
   closePopup(popupAdd);
-  placeName.value = '';
-  placeLink.value = '';
+  // placeName.value = '';
+  // placeLink.value = '';
 }
 
-function deleteCardHandle(evt) {
+function handleCardDelete(evt) {
   const item = evt.target.closest('.element');
   item.remove();
 }
 
 function handleEsc(evt) {
-  const popupOpened = document.querySelector('.popup_opened');
   if (evt.key === 'Escape') {
+    const popupOpened = document.querySelector('.popup_opened');
     closePopup(popupOpened);
-  }
-}
-
-function handleOverlay(evt) {
-  const popupOpened = document.querySelector('.popup_opened');
-  if (evt.target === popupOpened) {
-  closePopup(popupOpened);
   }
 }
 
@@ -108,28 +126,34 @@ buttonEdit.addEventListener('click', function () {
   openPopup(popupEdit);
   nameInput.value = profileName.textContent;
   jobInput.value = profileAbout.textContent;
+  cancelValidation(config);
 });
 
 buttonAdd.addEventListener('click', function () {
   openPopup(popupAdd);
+  cancelValidation(config);
+  toggleButton(config, formAddElement);
 });
 
-buttonEditClose.addEventListener('click', function () {
-  closePopup(popupEdit);
+// buttonEditClose.addEventListener('click', function () {
+//   closePopup(popupEdit);
+// });
+
+// buttonAddClose.addEventListener('click', function () {
+//   closePopup(popupAdd);
+//   // placeName.value = '';
+//   // placeLink.value = '';
+// });
+
+// buttonPictureClose.addEventListener('click', function () {
+//   closePopup(popupPicture);
+// });
+
+
+
+formEditElement.addEventListener('submit', handleProfileFormSubmit);
+
+formAddElement.addEventListener('submit', (evt) => {
+  handleCardAdd(evt);
+  evt.target.reset();
 });
-
-buttonAddClose.addEventListener('click', function () {
-  closePopup(popupAdd);
-  placeName.value = '';
-  placeLink.value = '';
-});
-
-buttonPictureClose.addEventListener('click', function () {
-  closePopup(popupPicture);
-});
-
-formEditElement.addEventListener('submit', editProfileHandle);
-formAddElement.addEventListener('submit', addCardHandle);
-
-document.addEventListener('keydown', handleEsc);
-document.addEventListener('click', handleOverlay);
