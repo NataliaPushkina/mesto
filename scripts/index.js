@@ -23,15 +23,12 @@ const placeLink = document.querySelector('.popup__input_el_link');
 function openPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', handleEsc);
-  // document.addEventListener('click', handleOverlay);
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', handleEsc);
-  // document.removeEventListener('click', handleOverlay);
 }
-
 
 popups.forEach((popup) => {
   popup.addEventListener('mousedown', (evt) => {
@@ -44,13 +41,6 @@ popups.forEach((popup) => {
   });
 });
 
-// function handleOverlay(evt) {
-//   const popupOpened = document.querySelector('.popup_opened');
-//   if (evt.target === popupOpened) {
-//   closePopup(popupOpened);
-//   }
-// }
-
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
@@ -58,13 +48,9 @@ function handleProfileFormSubmit(evt) {
   closePopup(popupEdit);
 }
 
-function pushCard(item) {
-  elementsList.prepend(item);
-}
-
 function render() {
   const cards = initialCards.map(getElement);
-  pushCard(...cards);
+  elementsList.prepend(...cards);
 }
 
 function getElement(item) {
@@ -92,20 +78,15 @@ function getElement(item) {
     openPopup(popupPicture);
   });
 
-  pushCard(getElementTemplate);
   return getElementTemplate;
 }
-
-// console.log(getElementTemplate);
 
 function handleCardAdd(evt) {
   evt.preventDefault();
   const newCard = getElement(
     { name: placeName.value, link: placeLink.value });
-  pushCard(newCard);
+  elementsList.prepend(newCard);
   closePopup(popupAdd);
-  // placeName.value = '';
-  // placeLink.value = '';
 }
 
 function handleCardDelete(evt) {
@@ -134,22 +115,6 @@ buttonAdd.addEventListener('click', function () {
   cancelValidation(config);
   toggleButton(config, formAddElement);
 });
-
-// buttonEditClose.addEventListener('click', function () {
-//   closePopup(popupEdit);
-// });
-
-// buttonAddClose.addEventListener('click', function () {
-//   closePopup(popupAdd);
-//   // placeName.value = '';
-//   // placeLink.value = '';
-// });
-
-// buttonPictureClose.addEventListener('click', function () {
-//   closePopup(popupPicture);
-// });
-
-
 
 formEditElement.addEventListener('submit', handleProfileFormSubmit);
 
