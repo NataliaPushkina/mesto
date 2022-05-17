@@ -58,7 +58,7 @@ function handlePhotoClick(name, link) {
   document.querySelector('.popup__image').src = link;
   document.querySelector('.popup__image').alt = name;
   document.querySelector('.popup__caption').textContent = name;
-  popupPicture.classList.add('popup_opened');
+  openPopup(popupPicture);
 }
 
 function closePopup(popup) {
