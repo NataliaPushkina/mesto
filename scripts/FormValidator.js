@@ -6,6 +6,8 @@ export class FormValidator {
     this._inactiveButtonClass = config.inactiveButtonClass;
     this._inputErrorClass = config.inputErrorClass;
     this._errorClass = config.errorClass;
+    this._inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
+    this._buttonElement = this._formElement.querySelector(this._submitButtonSelector);
   }
 
   _showInputError(inputElement) {
@@ -31,21 +33,19 @@ export class FormValidator {
   }
 
   _hasInvalidInput()  {
-    const inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
-    return inputList.some((inputElement) => {
+    return this._inputList.some((inputElement) => {
       return !inputElement.validity.valid;
     })
   }
 
   toggleButton() {
-    const buttonElement = this._formElement.querySelector(this._submitButtonSelector);
-    buttonElement.disabled = !this._formElement.checkValidity();
-    buttonElement.classList.toggle(this._inactiveButtonClass, !this._formElement.checkValidity());
+    this._buttonElement = this._formElement.querySelector(this._submitButtonSelector);
+    this._buttonElement.disabled = !this._formElement.checkValidity();
+    this._buttonElement.classList.toggle(this._inactiveButtonClass, !this._formElement.checkValidity());
   }
 
   enableValidation() {
-    const inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
-    inputList.forEach((inputElement) => {
+    this._inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', () => {
         this._checkInputValidity(inputElement);
         this.toggleButton();
@@ -54,13 +54,8 @@ export class FormValidator {
 }
 
   cancelValidation() {
-    const inputList = Array.from(document.querySelectorAll(this._inputSelector));
-
-    inputList.forEach((inputElement) => {
-      const errorElement = document.querySelector(`.${inputElement.id}-error`);
-      inputElement.classList.remove(this._inputErrorClass);
-      errorElement.classList.remove(this._errorClass);
-      errorElement.textContent = '';
+    this._inputList.forEach((inputElement) => {
+      this._hideInputError(inputElement);
     });
   }
 }
