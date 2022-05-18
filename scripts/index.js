@@ -47,10 +47,10 @@ const cardImage = document.querySelector('.popup__image');
 const caption = document.querySelector('.popup__caption');
 const elementsList =  document.querySelector('.elements__list');
 
-// const cardFormValidator = new FormValidator(config, formAddElement);
-// const profileFormValidator = new FormValidator(config, formEditElement);
-// cardFormValidator.enableValidation();
-// profileFormValidator.enableValidation();
+const cardFormValidator = new FormValidator(config, formAddElement);
+const profileFormValidator = new FormValidator(config, formEditElement);
+cardFormValidator.enableValidation();
+profileFormValidator.enableValidation();
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
