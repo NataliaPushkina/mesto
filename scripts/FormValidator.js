@@ -39,7 +39,6 @@ export class FormValidator {
   }
 
   toggleButton() {
-    this._buttonElement = this._formElement.querySelector(this._submitButtonSelector);
     this._buttonElement.disabled = !this._formElement.checkValidity();
     this._buttonElement.classList.toggle(this._inactiveButtonClass, !this._formElement.checkValidity());
   }
