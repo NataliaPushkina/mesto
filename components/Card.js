@@ -2,7 +2,7 @@ import { Popup } from "./Popup.js";
 import { PopupWithImage } from "./PopupWithImage.js";
 
 export class Card {
-  constructor(data, cardSelector, handleCardClick) {
+  constructor(data, cardSelector, {handleCardClick}) {
     this._link = data.link;
     this._name = data.name;
     this._cardSelector = cardSelector;
@@ -44,8 +44,7 @@ export class Card {
     });
 
     this._cardImage.addEventListener('click', () => {
-      this._handleCardClick(this._name, this._link);
-      // this._popup.handleCardClick();
+      this._handleCardClick(this._cardImage);
     });
 
     this._element.querySelector('.button_type_like').addEventListener('click', (evt) => {

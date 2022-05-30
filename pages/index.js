@@ -1,5 +1,6 @@
-import { Card } from "../../components/Card.js";
-import { FormValidator } from "../../components/FormValidator.js";
+//import './pages/index.css';
+import { Card } from "../components/Card.js";
+import { FormValidator } from "../components/FormValidator.js";
 import {
   config,
   initialCards,
@@ -18,12 +19,12 @@ import {
   cardImage,
   caption,
   elementsList
-} from "../../utils/constants.js";
-import { Popup } from "../../components/Popup.js";
-import { PopupWithForm } from "../../components/PopupWithForm.js";
-import { PopupWithImage } from "../../components/PopupWithImage.js";
-import { Section } from "../../components/section.js";
-import { UserInfo } from "../../components/UserInfo.js";
+} from "../utils/constants.js";
+import { Popup } from "../components/Popup.js";
+import { PopupWithForm } from "../components/PopupWithForm.js";
+import { PopupWithImage } from "../components/PopupWithImage.js";
+import { Section } from "../components/section.js";
+import { UserInfo } from "../components/UserInfo.js";
 
 const popupEditProfile = new Popup('.popup_action_edit');
 popupEditProfile.setEventListeners();
@@ -31,12 +32,18 @@ popupEditProfile.setEventListeners();
 const popupAddCard = new Popup('.popup_action_add');
 popupAddCard.setEventListeners();
 
-const popupOpenPicture = new Popup('.popup_action_open-pic', '.popup__image', '.popup__caption');
+const popupOpenPicture = new PopupWithImage('.popup_action_open-pic', '.popup__image', '.popup__caption');
+popupOpenPicture.setEventListeners();
 
 // СОЗДАНИЕ НОВОЙ КАРТОЧКИ
 const createCard = (item) => {
-  console.log(item);
-  const card = new Card(item, '.template-element', () => handleCardClick());
+  const card = new Card(item,
+    '.template-element',
+    {handleCardClick(item) {
+      console.log(item);
+      popupOpenPicture.openPopup(item);
+    }
+    });
   const cardElement = card.generateCard();
   return cardElement;
 }
