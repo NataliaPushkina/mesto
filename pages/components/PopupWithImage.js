@@ -12,7 +12,6 @@ export class PopupWithImage extends Popup {
     this._cardImage.src = item.link;
     this._cardImage.alt = item.name;
     this._cardImage.textContent = item.name;
-    console.log(this._cardImage);
-    this._popup.classList.add('popup_opened');
+    super._openPopup();
   }
 }

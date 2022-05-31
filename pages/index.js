@@ -1,6 +1,6 @@
 //import './pages/index.css';
-import { Card } from "../components/Card.js";
-import { FormValidator } from "../components/FormValidator.js";
+import { Card } from "./components/Card.js";
+import { FormValidator } from "./components/FormValidator.js";
 import {
   config,
   initialCards,
@@ -20,11 +20,11 @@ import {
   caption,
   elementsList
 } from "../utils/constants.js";
-import { Popup } from "../components/Popup.js";
-import { PopupWithForm } from "../components/PopupWithForm.js";
-import { PopupWithImage } from "../components/PopupWithImage.js";
-import { Section } from "../components/Section.js";
-import { UserInfo } from "../components/UserInfo.js";
+import { Popup } from "./components/Popup.js";
+import { PopupWithForm } from "./components/PopupWithForm.js";
+import { PopupWithImage } from "./components/PopupWithImage.js";
+import { Section } from "./components/Section.js";
+// import { UserInfo } from "./components/UserInfo.js";
 
 const popupEditProfile = new Popup('.popup_action_edit');
 popupEditProfile.setEventListeners();
@@ -35,24 +35,25 @@ popupAddCard.setEventListeners();
 const popupOpenPicture = new PopupWithImage('.popup_action_open-pic', '.popup__image', '.popup__caption');
 popupOpenPicture.setEventListeners();
 
-// СОЗДАНИЕ НОВОЙ КАРТОЧКИ
-const createCard = (item) => {
-  const card = new Card(item,
-    '.template-element',
-    {handleCardClick(item) {
-      console.log(item);
-      popupOpenPicture.openPopup(item);
-    }
-    });
-  const cardElement = card.generateCard();
-  return cardElement;
-}
 
 // ДОБАВЛЕНИЕ КАРТОЧКИ ПОЛЬЗОВАТЕЛЕМ
 function handleCardAdd(evt) {
   evt.preventDefault();
   elementsList.prepend(createCard({ name: placeName.value, link: placeLink.value }));
   popupAddCard.closePopup();
+}
+
+// СОЗДАНИЕ НОВОЙ КАРТОЧКИ
+const createCard = (item) => {
+  const card = new Card(item,
+    {handleCardClick: (item) => {
+    console.log(item);
+    popupOpenPicture.openPopup(item);
+    popupOpenPicture.setEventListeners();
+    }
+    }, '.template-element');
+  const cardElement = card.generateCard();
+  return cardElement;
 }
 
 // ДОБАВЛЕНИЕ КАРТОЧЕК НА СТРАНИЦУ
