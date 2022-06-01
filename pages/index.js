@@ -36,8 +36,8 @@ const popupOpenPicture = new PopupWithImage('.popup_action_open-pic', '.popup__i
 popupOpenPicture.setEventListeners();
 
 
-// ДОБАВЛЕНИЕ КАРТОЧКИ ПОЛЬЗОВАТЕЛЕМ
-function handleCardAdd(evt) {
+// // ДОБАВЛЕНИЕ КАРТОЧКИ ПОЛЬЗОВАТЕЛЕМ
+const handleCardAdd = (evt) => {
   evt.preventDefault();
   elementsList.prepend(createCard({ name: placeName.value, link: placeLink.value }));
   popupAddCard.closePopup();
@@ -46,10 +46,10 @@ function handleCardAdd(evt) {
 // СОЗДАНИЕ НОВОЙ КАРТОЧКИ
 const createCard = (item) => {
   const card = new Card(item,
-    {handleCardClick: (item) => {
-    console.log(item);
-    popupOpenPicture.openPopup(item);
-    popupOpenPicture.setEventListeners();
+    {
+      handleCardClick: (name, link) => {
+      popupOpenPicture.openPopup(name, link);
+      popupOpenPicture.setEventListeners();
     }
     }, '.template-element');
   const cardElement = card.generateCard();
@@ -68,6 +68,8 @@ const cardList = new Section({
 
 cardList.renderItems(initialCards);
 
+// const userInfo = new UserInfo('.profile__title', '.profile__subtitle');
+
 //ВАЛИДАЦИЯ
 const cardFormValidator = new FormValidator(config, formAddElement);
 const profileFormValidator = new FormValidator(config, formEditElement);
@@ -85,9 +87,9 @@ profileFormValidator.enableValidation();
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
- // user.getUserInfo();
-  profileName.textContent = nameInput.value;
-  profileAbout.textContent = jobInput.value;
+  // user.getUserInfo();
+  // profileName.textContent = nameInput.value;
+  // profileAbout.textContent = jobInput.value;
   popupEditProfile.closePopup();
 }
 
@@ -105,7 +107,10 @@ buttonAdd.addEventListener('click', function () {
   cardFormValidator.toggleButton();
 });
 
-formEditElement.addEventListener('submit', handleProfileFormSubmit)
+formEditElement.addEventListener('submit', handleProfileFormSubmit);
+  // evt.preventDefault();
+  // userInfo.getUserInfo();
+
 
 formAddElement.addEventListener('submit', (evt) => {
   handleCardAdd(evt);

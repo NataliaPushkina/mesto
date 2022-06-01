@@ -14,4 +14,9 @@ export class Section {
   addItem(element) {
     this._container.prepend(element);
   }
+
+  // handleCardAdd = (evt) => {
+  //   evt.preventDefault();
+  //   addItem(createCard({ name: placeName.value, link: placeLink.value }));
+  // }
 }

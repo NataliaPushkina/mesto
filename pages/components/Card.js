@@ -45,7 +45,7 @@ export class Card {
     });
 
     this._cardImage.addEventListener('click', () => {
-      this._handleCardClick(this._data);
+      this._handleCardClick(this._name, this._link);
     });
 
     this._element.querySelector('.button_type_like').addEventListener('click', (evt) => {

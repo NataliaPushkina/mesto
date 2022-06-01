@@ -1,9 +1,9 @@
 import {nameInput, jobInput, profileName, profileAbout} from "../../utils/constants.js";
 
 export class UserInfo {
-  constructor({profileNameSelector, profileAboutSelector}) {
-    this._profileName = document.querySelector('.profile__title').textContent;
-    this._profileAbout = document.querySelector('.profile__subtitle').textContent;
+  constructor(profileNameSelector, profileJobSelector) {
+    this._profileName = document.querySelector(profileNameSelector).textContent;
+    this._profileAbout = document.querySelector(profileJobSelector).textContent;
     // this._nameInput = nameInput;
     // this._jobInput = jobInput;
   }
@@ -21,9 +21,9 @@ export class UserInfo {
     return user;
   }
 
-  setUserInfo() {
+  setUserInfo({name,info}) {
    // принимает новые данные пользователя и добавляет их на страницу
-   this._profileName = user.name.textContent;
+   this._profileName = usertextContent.name;
    this._profileAbout = user.job.textContent;
   }
 }

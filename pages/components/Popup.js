@@ -4,7 +4,7 @@ export class Popup {
     this._popups = document.querySelectorAll('.popup');
   }
 
-  openPopup = () => {
+  openPopup() {
     this._popup.classList.add('popup_opened');
     document.addEventListener('keydown', this._handleEscClose);
   }
