@@ -1,6 +1,3 @@
-// import { Popup } from "./Popup.js";
-// import { PopupWithImage } from "./PopupWithImage.js";
-
 export class Card {
   constructor(data, {handleCardClick}, cardSelector) {
     this._data = data;
@@ -51,7 +48,5 @@ export class Card {
     this._element.querySelector('.button_type_like').addEventListener('click', (evt) => {
       this._handleCardLike(evt);
     });
-
-
   }
 }
