@@ -13,13 +13,11 @@ export class UserInfo {
       name: this._profileName.textContent,
       job: this._profileAbout.textContent
     };
-    console.log(user);
     return user;
   }
 
   setUserInfo = (name, job) => {
     nameInput.value = name.textContent;
     jobInput.value = job.textContent;
-    console.log(job.textContent, "вот");
   }
 }
