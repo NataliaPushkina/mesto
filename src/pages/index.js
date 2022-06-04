@@ -1,4 +1,4 @@
-//import './pages/index.css';
+import '../pages/index.css';
 import { Card } from "../components/Card.js";
 import { FormValidator } from "../components/FormValidator.js";
 import {
@@ -10,6 +10,8 @@ import {
   formAddElement,
   profileName,
   profileAbout,
+  nameInput,
+  jobInput,
   placeName,
   placeLink,
   elementsList
@@ -21,7 +23,7 @@ import { Section } from "../components/Section.js";
 import { UserInfo } from "../components/UserInfo.js";
 
 export const user = new UserInfo('.profile__title', '.profile__subtitle');
-// user.setUserInfo(profileName, profileAbout);
+user.setUserInfo(nameInput, jobInput);
 
 /**
  * СОЗДАНИЕ НОВОЙ КАРТОЧКИ
@@ -52,14 +54,6 @@ const cardList = new Section({
 cardList.renderItems(initialCards);
 
 
-/**
- * ВАЛИДАЦИЯ
- */
-const cardFormValidator = new FormValidator(config, formAddElement);
-const profileFormValidator = new FormValidator(config, formEditElement);
-cardFormValidator.enableValidation();
-profileFormValidator.enableValidation();
-
 const popupEditProfile = new Popup('.popup_action_edit');
 popupEditProfile.setEventListeners();
 
@@ -67,7 +61,7 @@ const popupAddCard = new Popup('.popup_action_add');
 popupAddCard.setEventListeners();
 
 const popupOpenPicture = new PopupWithImage('.popup_action_open-pic', '.popup__image', '.popup__caption');
-popupOpenPicture.setEventListeners();
+// popupOpenPicture.setEventListeners();
 
 const popupWithFormEdit = new PopupWithForm('.popup_action_edit',
   {handleFormSubmit: (evt, inputs) => {
@@ -86,15 +80,24 @@ const popupWithFormEdit = new PopupWithForm('.popup_action_edit',
   }, '.popup__form_add-element');
   popupWithFormAdd.setEventListeners();
 
+
+  /**
+ * ВАЛИДАЦИЯ
+ */
+const cardFormValidator = new FormValidator(config, formAddElement);
+const profileFormValidator = new FormValidator(config, formEditElement);
+cardFormValidator.enableValidation();
+profileFormValidator.enableValidation();
+
   buttonEdit.addEventListener('click', function () {
     popupEditProfile.openPopup();
-    // user.setUserInfo(profileName, profileAbout);
+    user.setUserInfo(profileName, profileAbout);
     profileFormValidator.cancelValidation();
   });
 
   buttonAdd.addEventListener('click', function () {
     popupAddCard.openPopup();
-    // user.setUserInfo(profileName, profileAbout);
+    user.setUserInfo(profileName, profileAbout);
     cardFormValidator.cancelValidation();
     cardFormValidator.toggleButton();
   });

@@ -17,9 +17,9 @@ export class UserInfo {
     return user;
   }
 
-  setUserInfo(name, job) {
-   this._profileName.textContent = name.textContent;
-   this._profileAbout.textContent = job.textContent;
-   console.log(job.textContent, "вот");
+  setUserInfo = (name, job) => {
+    nameInput.value = name.textContent;
+    jobInput.value = job.textContent;
+    console.log(job.textContent, "вот");
   }
 }
