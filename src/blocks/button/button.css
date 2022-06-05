@@ -5,9 +5,9 @@
   outline: none;
   background-color: transparent;
   cursor: pointer;
-  transition: opacity .4s;
+  transition: opacity 0.4s;
 }
 
 .button:hover {
-  opacity: .6;
+  opacity: 0.6;
 }

@@ -1,5 +1,5 @@
 .button_type_like {
-  background-image: url('../../../images/like.svg');
+  background-image: url("../../../images/like.svg");
   background-repeat: no-repeat;
   background-position: center;
   object-fit: contain;
@@ -9,4 +9,3 @@
   border: none;
   background-color: transparent;
 }
-
