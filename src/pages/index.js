@@ -113,7 +113,6 @@ buttonEdit.addEventListener("click", () => {
   let data = user.getUserInfo();
   nameInput.value = data.name;
   jobInput.value = data.job;
-  user.setUserInfo(data);
   popupWithFormEdit.openPopup();
   profileFormValidator.cancelValidation();
 });
