@@ -1,4 +1,4 @@
-.button_type_confirm {
+.popup__button_type_confirm {
   width: 358px;
   height: 50px;
   background-color: #000;
@@ -15,13 +15,12 @@
   box-sizing: border-box;
 }
 
-.button_type_confirm:hover {
-  opacity: .8;
+.popup__button_type_confirm:hover {
+  opacity: 0.8;
 }
 
-
 @media screen and (max-width: 580px) {
-  .button_type_confirm {
+  .popup__button_type_confirm {
     width: 238px;
     height: 46px;
     font-size: 14px;
