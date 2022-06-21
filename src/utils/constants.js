@@ -38,10 +38,14 @@ const popups = document.querySelectorAll(".popup");
 const popupEdit = document.querySelector(".popup_action_edit");
 const popupAdd = document.querySelector(".popup_action_add");
 const popupPicture = document.querySelector(".popup_action_open-pic");
+const popupUpdateAvatar = document.querySelector(".popup_action_update-avatar");
 const buttonAdd = document.querySelector(".button_type_add");
 const buttonEdit = document.querySelector(".button_type_edit");
 const formEditElement = popupEdit.querySelector(".popup__form_edit-element");
 const formAddElement = popupAdd.querySelector(".popup__form_add-element");
+const formUpdateAvatar = popupUpdateAvatar.querySelector(
+  ".popup__form_update-avatar"
+);
 const profileName = document.querySelector(".profile__title");
 const profileAbout = document.querySelector(".profile__subtitle");
 const nameInput = document.querySelector(".popup__input_el_name");
@@ -51,6 +55,9 @@ const placeLink = document.querySelector(".popup__input_el_link");
 const cardImage = document.querySelector(".popup__image");
 const caption = document.querySelector(".popup__caption");
 const elementsList = document.querySelector(".elements__list");
+const avatarInput = document.querySelector(".popup__input_el_avatar");
+const buttonEditAvatar = document.querySelector(".profile__edit-icon");
+const avatarHtml = document.querySelector(".profile__avatar");
 
 export {
   config,
@@ -72,4 +79,8 @@ export {
   cardImage,
   caption,
   elementsList,
+  avatarInput,
+  buttonEditAvatar,
+  avatarHtml,
+  formUpdateAvatar,
 };

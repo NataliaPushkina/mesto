@@ -19,11 +19,14 @@
     <section class="content">
       <section class="profile">
         <div class="profile__container">
-          <img
-            src="<%=require('./images/image.jpg')%>"
-            alt="Аватар"
-            class="profile__avatar"
-          />
+          <a href="#" class="profile__avatar-wrapper">
+            <img src="" alt="Аватар" class="profile__avatar" />
+            <button
+              type="button"
+              class="profile__edit-icon profile__edit-icon_hidden"
+            ></button>
+          </a>
+
           <div class="profile__info">
             <div class="profile__edit-container">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -128,17 +131,61 @@
       </div>
     </div>
 
+    <div class="popup popup_action_delete-pic">
+      <div class="popup__container popup__container_action_delete-pic">
+        <button type="button" class="button button_type_close"></button>
+        <h3 class="popup__title">Вы уверены?</h3>
+        <form
+          class="popup__form popup__form_delete-pic"
+          name="formElement"
+          novalidate
+        >
+          <button type="submit" class="popup__button button_type_confirm">
+            Да
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup_action_update-avatar">
+      <div class="popup__container popup__container_action_update-avatar">
+        <button type="button" class="button button_type_close"></button>
+        <h3 class="popup__title">Обновить аватар</h3>
+        <form
+          class="popup__form popup__form_update-avatar"
+          name="formElement"
+          novalidate
+        >
+          <input
+            required
+            type="url"
+            name="avatar"
+            id="url"
+            class="popup__input popup__input_el_avatar"
+            placeholder="Введите url адрес картинки"
+          />
+          <span class="popup__error url-error"></span>
+          <button type="submit" class="popup__button button_type_create">
+            Сохранить
+          </button>
+        </form>
+      </div>
+    </div>
+
     <template class="template-element">
       <li class="element">
         <img
-          src="./pages/images/kirill-pershin-1088404-unsplash.jpg"
+          src="./images/kirill-pershin-1088404-unsplash.jpg"
           alt=""
           class="element__photo"
         />
         <button class="button button_type_delete"></button>
         <div class="element__caption">
           <h2 class="element__title"></h2>
-          <button type="button" class="button button_type_like"></button>
+          <div class="element__like-container">
+            <button type="button" class="button button_type_like"></button>
+            <span class="element__like-count"></span>
+          </div>
         </div>
       </li>
     </template>
