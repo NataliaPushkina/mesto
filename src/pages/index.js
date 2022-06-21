@@ -70,7 +70,6 @@ const createCard = (item, userId) => {
           api
             .deleteCard(cardElement._id)
             .then((res) => {
-              console.log(res, "delete");
               card.handleCardDelete();
               popupDeleteCard.closePopup();
             })
@@ -122,7 +121,7 @@ const popupWithFormEdit = new PopupWithForm(
           console.log(err);
         })
         .finally(() => {
-          popupWithFormEdit.renderLoading(false);
+          popupWithFormAdd.renderLoading(false);
         });
       popupWithFormEdit.closePopup();
     },
@@ -206,7 +205,6 @@ const popupUpdateAvatar = new PopupWithForm(
         .updateAvatar(avatarInput.value)
         .then((res) => {
           user.setUserAvatar(res.avatar);
-          console.log(res.avatar);
         })
         .catch((err) => {
           console.log(err);

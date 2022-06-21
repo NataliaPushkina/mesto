@@ -52,7 +52,6 @@ export class FormValidator {
       this._inactiveButtonClass,
       !this._formElement.checkValidity()
     );
-    console.log(this._formElement.checkValidity());
   }
 
   enableValidation() {
