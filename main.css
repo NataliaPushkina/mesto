@@ -46,14 +46,13 @@
 .popup__error{color:red;display:block;font-size:12px;font-weight:400;line-height:15px;margin-left:36px}@media screen and (max-width:500px){.popup__error{margin-left:0}}
 .popup__button{align-self:center;background-color:#000;border:none;border-radius:2px;box-sizing:border-box;color:#fff;cursor:pointer;font-size:18px;height:50px;line-height:22px;margin:48px auto 37px;padding:0;text-align:center;transition:opacity .4s;width:358px}.popup__button:hover{opacity:.8}@media screen and (max-width:580px){.popup__button{font-size:14px;height:46px;line-height:17px;margin:45px auto 25px;width:238px}}
 .popup__button_disabled{background-color:#e5e5e5;color:#000;cursor:default}
-.profile__avatar-wrapper{border-radius:50%;color:#000;height:120px;position:relative;width:120px}
+.profile__avatar-link{border-radius:50%;height:120px;position:relative;transition:opacity .4s;width:120px}
 .profile__edit-icon{background-color:inherit;background-image:url(a086f758840ae814ecde.svg);background-position:50%;background-repeat:no-repeat;background-size:cover;border:0;display:block;height:26px;left:calc(50% - 13px);position:absolute;top:calc(50% - 13px);width:26px;z-index:3}
 .profile__edit-icon_hidden{display:none}
 .popup__container_action_update-avatar{justify-content:space-between;min-height:272px}
 .popup__container_action_delete-pic{justify-content:space-between;min-height:181px}
 .popup__input_el_avatar{margin-top:54px}
 .popup__button_type_confirm{align-self:center;background-color:#000;border:none;border-radius:2px;box-sizing:border-box;color:#fff;font-size:18px;font-weight:400;height:50px;line-height:22px;margin:38px auto 36px;padding:0;text-align:center;width:358px}.popup__button_type_confirm:hover{opacity:.8}@media screen and (max-width:580px){.popup__button_type_confirm{font-size:14px;height:46px;line-height:17px;margin:28px auto 25px;width:238px}}
-.popup__button_type_create{align-self:center;background-color:#000;border:none;border-radius:2px;box-sizing:border-box;color:#fff;font-size:18px;height:50px;line-height:22px;margin:48px auto 36px;padding:0;text-align:center;width:358px}.popup__button_type_create:hover{opacity:.8}@media screen and (max-width:767px){.popup__button_type_create{font-size:14px;height:46px;line-height:17px;margin:36px auto 25px;width:238px}}
 .element__like-count{font-size:13px;font-weight:400;line-height:16px;padding:5px 3px}
 .element__like-container{align-items:center;display:flex;flex-direction:column;justify-content:center}
 
